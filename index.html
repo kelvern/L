@@ -1,0 +1,61 @@
+            if (!websiteUrl) {
+                alert('Silakan masukkan URL website terlebih dahulu');
+                return;
+            }
+            
+            // Update code examples with the entered URL
+            document.getElementById('androidCode').textContent = `WebView webView = (WebView) findViewById(R.id.webview);
+webView.setWebViewClient(new WebViewClient());
+webView.getSettings().setJavaScriptEnabled(true);
+webView.loadUrl("${websiteUrl}");`;
+            
+            document.getElementById('iosCode').textContent = `import WebKit
+let webView = WKWebView(frame: view.frame)
+view.addSubview(webView)
+let url = URL(string: "${websiteUrl}")!
+let request = URLRequest(url: url)
+webView.load(request)`;
+            
+            // Show result section
+            document.getElementById('resultSection').classList.remove('hidden');
+        });
+        
+        // PWA Installation
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installPwaBtn').classList.remove('hidden');
+        });
+        
+        document.getElementById('installPwaBtn').addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.p
+
+Buat web fungsinya menukarkan web yang dimasukan menjadi aplikasi
+
+Copy message
+Edit message
+BLACKBOXAI
+
+Saya akan membuat sebuah web yang berfungsi untuk mengubah website menjadi aplikasi. Fitur utama yang dibutuhkan adalah:
+
+Input field untuk memasukkan URL website yang akan dikonversi
+Fungsi untuk memproses URL dan mengemasnya sebagai aplikasi
+Kemungkinan perlu menggunakan teknik seperti WebView atau PWA (Progressive Web App)
+UI yang menarik dan mudah digunakan
+Responsive design agar bisa digunakan di berbagai perangkat
+Karena ini akan berupa single file HTML, CSS dan JavaScript, saya akan membuat solusi yang sederhana tapi efektif dengan menjelaskan cara menggunakan WebView secara native melalui petunjuk yang jelas.
+
+web-to-app-converter.html
+
+html
+164 lines
+Click to close
+<!DOCTYPE html>
+<html lang="en">
+...
+Copy message
+Export
+Scroll to bottom

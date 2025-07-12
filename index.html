@@ -1,37 +1,47 @@
-            if (!websiteUrl) {
-                alert('Silakan masukkan URL website terlebih dahulu');
-                return;
-            }
-            
-            // Update code examples with the entered URL
-            document.getElementById('androidCode').textContent = `WebView webView = (WebView) findViewById(R.id.webview);
-webView.setWebViewClient(new WebViewClient());
-webView.getSettings().setJavaScriptEnabled(true);
-webView.loadUrl("${websiteUrl}");`;
-            
-            document.getElementById('iosCode').textContent = `import WebKit
-let webView = WKWebView(frame: view.frame)
-view.addSubview(webView)
-let url = URL(string: "${websiteUrl}")!
-let request = URLRequest(url: url)
-webView.load(request)`;
-            
-            // Show result section
-            document.getElementById('resultSection').classList.remove('hidden');
-        });
-        
-        // PWA Installation
-        let deferredPrompt;
-        
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            document.getElementById('installPwaBtn').classList.remove('hidden');
-        });
-        
-        document.getElementById('installPwaBtn').addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.p
+
+Toggle Sidebar
+
+BLACKBOXAI
+
+New
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web to App Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+        }
+        .card {
+            box-shadow: 0 10px 30px -5px rgba(0, 13, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px -5px rgba(0, 13, 255, 0.4);
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <div class="gradient-bg text-white py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Web to App Converter</h1>
+            <p class="text-xl mb-10">Ubah website favorit Anda menjadi aplikasi native dalam beberapa langkah mudah</p>
 
 Buat web fungsinya menukarkan web yang dimasukan menjadi aplikasi
 
@@ -59,3 +69,4 @@ Click to close
 Copy message
 Export
 Scroll to bottom
+            
